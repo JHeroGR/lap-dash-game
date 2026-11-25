@@ -1,0 +1,17 @@
+{
+  "name": "lap-dash",
+  "version": "1.0.0",
+  "description": "Lap Dash - a retro black-and-white, top-down, landscape racing game for phones. Plain HTML/CSS/JS, no framework.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/build.js && node --test tests/engine.test.js tests/e2e.test.js",
+    "test:engine": "node --test tests/engine.test.js",
+    "test:e2e": "node scripts/build.js && node --test tests/e2e.test.js",
+    "balance": "node tests/balance.js",
+    "screenshots": "node scripts/screenshots.js"
+  },
+  "devDependencies": { "playwright": "^1.40.0" }
+}
