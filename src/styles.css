@@ -63,7 +63,7 @@ input{cursor:text;font-size:18px;letter-spacing:.12em;text-transform:uppercase;p
 #hud>#light{pointer-events:none}
 #top{position:absolute;left:0;right:0;top:0;height:var(--topH);display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"lap life board";align-items:center;column-gap:10px;box-sizing:border-box;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
 #lapbox{grid-area:lap;display:flex;align-items:center;gap:clamp(8px,1.4vw,14px);justify-self:start;white-space:nowrap}
-#pause{display:flex;align-items:center;gap:5px;height:clamp(38px,5.2vw,46px);padding:0 clamp(8px,1.3vw,13px);font-size:clamp(9px,1.4vw,12px);letter-spacing:.06em;border-width:3px}
+#pause{display:flex;align-items:center;gap:5px;height:clamp(44px,5.2vw,46px);padding:0 clamp(8px,1.3vw,13px);font-size:clamp(9px,1.4vw,12px);letter-spacing:.06em;border-width:3px}
 #pause i{display:block;width:5px;height:clamp(12px,1.9vw,16px);background:currentColor}
 #pause span{margin-left:5px}
 #lapwrap{display:flex;align-items:baseline;gap:clamp(5px,.9vw,9px)}

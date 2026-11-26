@@ -1,0 +1,9 @@
+{
+  "appId": "com.example.lapdash",
+  "appName": "Lap Dash",
+  "webDir": "www",
+  "backgroundColor": "#000000",
+  "server": { "androidScheme": "https" },
+  "ios": { "contentInset": "never", "preferredContentMode": "mobile" },
+  "android": { "allowMixedContent": false }
+}

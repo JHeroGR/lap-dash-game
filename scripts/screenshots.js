@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Regenerates docs/screenshots/*.png from the dev build (uses the bundled Press Start 2P font).  npm run screenshots
 const {chromium}=require('playwright'); const path=require('path'),fs=require('fs');
-const file='file://'+path.join(__dirname,'..','index.html'), out=path.join(__dirname,'..','docs','screenshots')+'/';
+const file='file://'+path.join(__dirname,'..','www','index.html'), out=path.join(__dirname,'..','docs','screenshots')+'/';
 fs.mkdirSync(out,{recursive:true});
 (async()=>{
   const b=await chromium.launch();
@@ -21,11 +21,11 @@ fs.mkdirSync(out,{recursive:true});
     await p.waitForTimeout(1500); if(r==='3') await p.screenshot({path:out+'05-stoplight-go.png'});
     await p.waitForTimeout(4500); await p.screenshot({path:out+`06-race-${r}-racers-${n}.png`});
     if(r==='7'){
-      await p.evaluate(()=>{race.me.inv=0;race.me.hurtT=0;hurt(race,race.me,40);}); await p.waitForTimeout(300); await p.screenshot({path:out+'07-health-bar.png'});
-      await p.evaluate(()=>{race.me.inv=0;race.me.hurtT=0;hurt(race,race.me,999);}); await p.waitForTimeout(220); await p.screenshot({path:out+'08-explosion.png'});
+      await p.evaluate(()=>{game.race.me.inv=0;game.race.me.hurtT=0;game.race.hurt(game.race.me,40);}); await p.waitForTimeout(300); await p.screenshot({path:out+'07-health-bar.png'});
+      await p.evaluate(()=>{game.race.me.inv=0;game.race.me.hurtT=0;game.race.hurt(game.race.me,999);}); await p.waitForTimeout(220); await p.screenshot({path:out+'08-explosion.png'});
       await p.waitForTimeout(1800); await p.click('#pause'); await p.waitForTimeout(300); await p.screenshot({path:out+'09-paused.png'});
       await p.click('#resume'); await p.waitForTimeout(200);
-      await p.evaluate(()=>{race.state='over';refresh(race);}); await p.waitForTimeout(500); await p.screenshot({path:out+'10-finish.png'});
+      await p.evaluate(()=>{game.race.state='over';game.race.refresh();}); await p.waitForTimeout(500); await p.screenshot({path:out+'10-finish.png'});
     }
     await p.context().close();
   }

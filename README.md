@@ -42,4 +42,3 @@ On phones, use the left and right steering buttons and the GAS / BRK pedal butto
 
 * **Developed by:** JHeroGR
 * **Font:** [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) by CodeMan38, SIL Open Font License 1.1
-
